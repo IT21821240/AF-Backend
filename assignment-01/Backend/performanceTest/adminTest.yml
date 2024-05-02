@@ -1,0 +1,64 @@
+config:
+  target: "http://localhost:8070" 
+  phases:
+    - duration: 60 
+      arrivalRate: 10 
+
+scenarios:
+  - name: "Admin Registration"
+    flow:
+      - post:
+          url: "/api/adm/admins"
+          json:
+            fullName: "John Doe"
+            dob: "1990-01-01"
+            address: "123 Main Street"
+            phone: "+947123456789"
+            email: "john.doe@example.com"
+            password: "Password123#"
+
+  - name: "Admin Login"
+    flow:
+      - post:
+          url: "/api/adm/adminLogin"
+          json:
+            email: "john.doe@example.com"
+            password: "Password123#"
+          capture:
+            as: "token" 
+            json: $.token 
+    
+  - name: "Get All Admins"
+    flow:
+      - get:
+          url: "/api/adm/admins"
+          headers:
+            Authorization: "Bearer {{ token }}"
+  
+  - name: "Get Admin by ID"
+    flow:
+      - get:
+          url: "/api/adm/AD2006"
+          headers:
+            Authorization: "Bearer {{ token }}"
+  
+  - name: "Update Admin"
+    flow:
+      - put:
+          url: "/api/adm/AD2006"
+          json:
+            fullName: "John Doe Jr."
+            dob: "1995-01-01"
+            address: "456 Oak Street"
+            phone: "+947987654321"
+            email: "john.doe@example.com"
+            password: "NewPassword123#"
+          headers:
+            Authorization: "Bearer {{ token }}" 
+
+  - name: "Delete Admin"
+    flow:
+      - delete:
+          url: "/api/adm/AD2006"
+          headers:
+            Authorization: "Bearer {{ token }}" 

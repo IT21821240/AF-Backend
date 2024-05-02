@@ -1,0 +1,58 @@
+config:
+  target: "http://localhost:8070" 
+  phases:
+    - duration: 300 
+      arrivalRate: 10 
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+- name: "Booking Management"
+  flow:
+      - post:
+          url: "/api/adm/login" 
+          json:
+            email: "john.doe@example.com" 
+            password: "Password123#" 
+          capture:
+            - json: "$.token" 
+              as: "capturedToken"  
+
+      - post:
+          url: "/api/book/bookings"  
+          headers:
+            Authorization: "{{ capturedToken }}" 
+          json:
+            roomId: "RF504"  
+            courseCode: "CSE101"
+            day: 1 
+            startTime: {"hours": 9, "minutes": 0}  
+            endTime: {"hours": 11, "minutes": 0} 
+
+      - think: 5 
+
+      - get:
+          url: "/api/book/bookings"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - put:
+          url: "/api/book/65f94a3296230fbddfaebf47"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+          json:
+            roomId: "RF504" 
+            courseCode: "CSE101" 
+            day: 1 
+            startTime: {"hours": 10, "minutes": 0} 
+            endTime: {"hours": 12, "minutes": 0} 
+
+      - think: 5
+
+      - delete:
+          url: "/api/book/65f94a3296230fbddfaebf47" 
+          headers:
+            Authorization: "{{ capturedToken }}"

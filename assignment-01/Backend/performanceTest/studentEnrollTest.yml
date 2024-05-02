@@ -1,0 +1,41 @@
+config:
+  target: "http://localhost:8070" 
+  phases:
+    - duration: 300 
+      arrivalRate: 10 
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+- name: "Student Enrollment"
+  flow:
+      - post:
+          url: "/api/adm/login" 
+          json:
+            email: "john.doe@example.com" 
+            password: "Password123#" 
+          capture:
+            - json: "$.token" 
+              as: "capturedToken"  
+
+      - post:
+          url: "/api/stuEnroll/enrollments"  
+          headers:
+            Authorization: "{{ capturedToken }}" 
+          json:
+            courseId: "CSE101" 
+          
+      - think: 5 
+
+      - get:
+          url: "/api/stuEnroll/enrollments/IT2004" 
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - get:
+          url: "/api/stuEnroll/enrollments/course/SE4070"  
+          headers:
+            Authorization: "{{ capturedToken }}"

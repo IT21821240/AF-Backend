@@ -1,0 +1,1428 @@
+{
+	"info": {
+		"_postman_id": "b69e227e-1aac-4f84-a432-3977b74df0f6",
+		"name": "AF Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29568715"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Harishanth Anandharaja\",\r\n    \"dob\": \"4/17/1996\",\r\n    \"address\": \"Jaffna\",\r\n    \"phone\": \"+94778576378\",\r\n    \"email\": \"hari@gmail.com\",\r\n    \"password\": \"Hari#12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/adm/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"adm",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3NjgxOSwiZXhwIjoxNzQyNzM0NDE5fQ.lN1zlzPnT2z7UcTHu_-_Z343FNi5JIRjOUf1znrh00w",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/adm/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"adm",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getadmin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3NjgxOSwiZXhwIjoxNzQyNzM0NDE5fQ.lN1zlzPnT2z7UcTHu_-_Z343FNi5JIRjOUf1znrh00w",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/adm/AD2001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"adm",
+								"AD2001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adminLogin",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"chanidu@gmail.com\",\r\n    \"password\": \"Chanidu#12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/adm/adminLogin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"adm",
+								"adminLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3NjgxOSwiZXhwIjoxNzQyNzM0NDE5fQ.lN1zlzPnT2z7UcTHu_-_Z343FNi5JIRjOUf1znrh00w",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Chanidu Senevirathna\",\r\n    \"dob\": \"3/20/1995\",\r\n    \"address\": \"kiribathgoda\",\r\n    \"phone\": \"+94778573878\",\r\n    \"email\": \"chanidu@gmail.com\",\r\n    \"password\": \"Chanidu#12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/adm/AD2001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"adm",
+								"AD2001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAdmin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3NjgxOSwiZXhwIjoxNzQyNzM0NDE5fQ.lN1zlzPnT2z7UcTHu_-_Z343FNi5JIRjOUf1znrh00w",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/adm/AD2004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"adm",
+								"AD2004"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Imana Rizve\",\r\n    \"dob\": \"3/22/2001\",\r\n    \"address\": \"Negembo\",\r\n    \"phone\": \"+94767543465\",\r\n    \"email\": \"imana@gmail.com\",\r\n    \"password\": \"Imana#1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/stu/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stu",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "studentLogin",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"thuwa@gmail.com\",\r\n    \"password\": \"Thuwa#1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/stu/stuLogin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stu",
+								"stuLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/stu/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stu",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStudent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7InN0dWRlbnRJRCI6IklUMjQwMSIsImVtYWlsIjoidGh1d2FAZ21haWwuY29tIiwiaWQiOiI2NWZjOGU0MmQ0YzExYjI1ZmI4MTNiYzcifSwiaWF0IjoxNzExMTc5MDgyLCJleHAiOjE3NDI3MzY2ODJ9.aeVZgD8nR4KEpZ7pZAUgwBNXkZZUlSS68OTxFLP-Mgo",
+								"description": "student",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/stu/IT2401",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stu",
+								"IT2401"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStudent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7InN0dWRlbnRJRCI6IklUMjQwMSIsImVtYWlsIjoidGh1d2FAZ21haWwuY29tIiwiaWQiOiI2NWZjOGU0MmQ0YzExYjI1ZmI4MTNiYzcifSwiaWF0IjoxNzExMTc5MDgyLCJleHAiOjE3NDI3MzY2ODJ9.aeVZgD8nR4KEpZ7pZAUgwBNXkZZUlSS68OTxFLP-Mgo",
+								"description": "student",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Thuwakaran Rasaratnam\",\r\n    \"dob\": \"7/15/1999\",\r\n    \"address\": \"Colombo-06\",\r\n    \"phone\": \"+94768763465\",\r\n    \"email\": \"thuwa@gmail.com\",\r\n    \"password\": \"Thuwa#1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/stu/IT2401",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stu",
+								"IT2401"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/stu/IT2403",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stu",
+								"IT2403"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "faculty",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Navoda Perera\",\r\n    \"dob\": \"2/7/1996\",\r\n    \"address\": \"Wattala\",\r\n    \"phone\": \"+94123456646\",\r\n    \"email\": \"navoda@gmail.com\",\r\n    \"password\": \"Navoda#123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/fac/faculties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"fac",
+								"faculties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3ODExOCwiZXhwIjoxNzQyNzM1NzE4fQ.Opm2UAwKwJihTBj04VAVHo_VhMPm2xyQ1X8WtFQwYk4",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/fac/faculties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"fac",
+								"faculties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facultyLogin",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\": \"jaya@gmail.com\",\r\n    \"password\": \"Jaya#12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/fac/facLogin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"fac",
+								"facLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFaculty",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYWN1bHR5Ijp7ImZhY3VsdHlJRCI6IkYxMDAxIiwiZW1haWwiOiJqYXlhQGdtYWlsLmNvbSIsImlkIjoiNjVmODRjY2E5NTNmNDExNTVmMzcxMjViIn0sImlhdCI6MTcxMTE3ODI4MCwiZXhwIjoxNzQyNzM1ODgwfQ.DYh8Ddf1A86s7NfU5gTthxu7Y5pMWzi1Ieti1ioVv7Y",
+								"description": "faculty",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/fac/F1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"fac",
+								"F1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFaculty",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYWN1bHR5Ijp7ImZhY3VsdHlJRCI6IkYxMDAxIiwiZW1haWwiOiJqYXlhQGdtYWlsLmNvbSIsImlkIjoiNjVmODRjY2E5NTNmNDExNTVmMzcxMjViIn0sImlhdCI6MTcxMTE3ODI4MCwiZXhwIjoxNzQyNzM1ODgwfQ.DYh8Ddf1A86s7NfU5gTthxu7Y5pMWzi1Ieti1ioVv7Y",
+								"description": "faculty",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Jayamathy Srikanthan\",\r\n    \"dob\": \"8/22/1990\",\r\n    \"address\": \"Colombo\",\r\n    \"phone\": \"+94774568743\",\r\n    \"email\": \"jaya@gmail.com\",\r\n    \"password\": \"Jaya#12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/fac/F1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"fac",
+								"F1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFaculty",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYWN1bHR5Ijp7ImZhY3VsdHlJRCI6IkYxMDAxIiwiZW1haWwiOiJqYXlhQGdtYWlsLmNvbSIsImlkIjoiNjVmODRjY2E5NTNmNDExNTVmMzcxMjViIn0sImlhdCI6MTcxMTE3ODI4MCwiZXhwIjoxNzQyNzM1ODgwfQ.DYh8Ddf1A86s7NfU5gTthxu7Y5pMWzi1Ieti1ioVv7Y",
+								"description": "faculty",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/fac/F1003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"fac",
+								"F1003"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseCode\": \"SE4020\",\r\n    \"name\": \"Object oriented programming\",\r\n    \"description\": \"An introductory course covering concepts of Object oriented programming.\",\r\n    \"credits\": 4,\r\n    \"faculties\": [ \"F1000\", \"F1001\" ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/cou/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"cou",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/cou/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"cou",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseCode\": \"SE4020\",\r\n    \"name\": \"Object Oriented Programming\",\r\n    \"description\": \"An introductory course covering concepts of Object oriented programming.\",\r\n    \"credits\": 4,\r\n    \"faculties\": [ \"F1000\", \"F1001\" ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/cou/SE4020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"cou",
+								"SE4020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCourse",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYWN1bHR5Ijp7ImZhY3VsdHlJRCI6IkYxMDAxIiwiZW1haWwiOiJqYXlhQGdtYWlsLmNvbSIsImlkIjoiNjVmODRjY2E5NTNmNDExNTVmMzcxMjViIn0sImlhdCI6MTcxMTE4MTY3OSwiZXhwIjoxNzQyNzM5Mjc5fQ.xiPDqCoC0fwBGxAwLZoEU09DDbJo_mcAhX463tfePsE",
+								"description": "faculty",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/cou/SE4070",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"cou",
+								"SE4070"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/cou/SE4020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"cou",
+								"SE4020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fac-course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYWN1bHR5Ijp7ImZhY3VsdHlJRCI6IkYxMDAxIiwiZW1haWwiOiJqYXlhQGdtYWlsLmNvbSIsImlkIjoiNjVmODRjY2E5NTNmNDExNTVmMzcxMjViIn0sImlhdCI6MTcxMTE5MDk1NSwiZXhwIjoxNzQyNzQ4NTU1fQ.L3hy3WeMBxPhAZrgPuxZvDvd07f6M1kL9Eln7SHHBiU",
+								"description": "faculty",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/cou/course/fac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"cou",
+								"course",
+								"fac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roomId\": \"RF503\",\r\n  \"courseCode\": \"SE3020\",\r\n  \"day\": 1,\r\n  \"startTime\": {\r\n    \"hours\": 14,\r\n    \"minutes\": 30\r\n  },\r\n  \"endTime\": {\r\n    \"hours\": 16,\r\n    \"minutes\": 30\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/book/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"book",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/book/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"book",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roomId\": \"RF503\",\r\n  \"courseCode\": \"SE3020\",\r\n  \"day\": 1,\r\n  \"startTime\": {\r\n    \"hours\": 14,\r\n    \"minutes\": 0\r\n  },\r\n  \"endTime\": {\r\n    \"hours\": 16,\r\n    \"minutes\": 0\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/book/65fe94f8e54eff8554183d07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"book",
+								"65fe94f8e54eff8554183d07"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/book/65fe94f8e54eff8554183d07",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"book",
+								"65fe94f8e54eff8554183d07"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "timetable",
+			"item": [
+				{
+					"name": "create",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTIwMDc5NiwiZXhwIjoxNzQyNzU4Mzk2fQ.LEQCYU6LoVtreuBFnBF3BcRjV4Z1oh2gYlbDeJ1tn1o",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\" : \"SE3020\",\r\n    \"day\": 2,\r\n    \"startTime\": {\r\n    \"hours\": 14,\r\n    \"minutes\": 30\r\n  },\r\n  \"endTime\": {\r\n    \"hours\": 16,\r\n    \"minutes\": 30\r\n  },\r\n    \"facultyId\": \"F1000\",\r\n    \"location\":\"RF503\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/time/timetable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"time",
+								"timetable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTIwMDc5NiwiZXhwIjoxNzQyNzU4Mzk2fQ.LEQCYU6LoVtreuBFnBF3BcRjV4Z1oh2gYlbDeJ1tn1o",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/time/timetables",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"time",
+								"timetables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTIwMDc5NiwiZXhwIjoxNzQyNzU4Mzk2fQ.LEQCYU6LoVtreuBFnBF3BcRjV4Z1oh2gYlbDeJ1tn1o",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\" : \"SE3020\",\r\n    \"day\": 2,\r\n    \"startTime\": {\r\n    \"hours\": 14,\r\n    \"minutes\": 30\r\n  },\r\n  \"endTime\": {\r\n    \"hours\": 16,\r\n    \"minutes\": 30\r\n  },\r\n    \"facultyId\": \"F1000\",\r\n    \"location\":\"RF503\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/time/65fee0a085e5f4e848125b22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"time",
+								"65fee0a085e5f4e848125b22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "studentTimetable",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7InN0dWRlbnRJRCI6IklUMjQwMSIsImVtYWlsIjoidGh1d2FAZ21haWwuY29tIiwiaWQiOiI2NWZjOGU0MmQ0YzExYjI1ZmI4MTNiYzcifSwiaWF0IjoxNzExMTg0Mjc1LCJleHAiOjE3NDI3NDE4NzV9.kA1gsiDvX2gA_lSkMB5B9nJBWtNR6Q4EDFz87e46VaM",
+								"description": "student",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/time/sTb/SE3020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"time",
+								"sTb",
+								"SE3020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facultyTimetable",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYWN1bHR5Ijp7ImZhY3VsdHlJRCI6IkYxMDAxIiwiZW1haWwiOiJqYXlhQGdtYWlsLmNvbSIsImlkIjoiNjVmODRjY2E5NTNmNDExNTVmMzcxMjViIn0sImlhdCI6MTcxMTE5MDk1NSwiZXhwIjoxNzQyNzQ4NTU1fQ.L3hy3WeMBxPhAZrgPuxZvDvd07f6M1kL9Eln7SHHBiU",
+								"description": "faculty",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/time/fTb/SE3010",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"time",
+								"fTb",
+								"SE3010"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTIwMDc5NiwiZXhwIjoxNzQyNzU4Mzk2fQ.LEQCYU6LoVtreuBFnBF3BcRjV4Z1oh2gYlbDeJ1tn1o",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/time/65fe96fbe54eff8554183d14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"time",
+								"65fe96fbe54eff8554183d14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "createRoom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"floorNo\": \"5\",\r\n    \"building\": \"Computing\",\r\n     \"name\": \"Lab\", \r\n     \"capacity\": 200,\r\n      \"resources\": [\"projector\", \"speaker\",\"monitors\"] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/ro/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"ro",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/ro/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"ro",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoom",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/ro/RF504",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"ro",
+								"RF504"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoom",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"floorNo\": \"5\",\r\n    \"building\": \"Computing\",\r\n     \"name\": \"Lab\", \r\n     \"capacity\": 250,\r\n      \"resources\": [\"projector\", \"speaker\",\"monitors\"] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/ro/RF504",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"ro",
+								"RF504"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/ro/RF504",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"ro",
+								"RF504"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enrollment",
+			"item": [
+				{
+					"name": "createEnrollment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7InN0dWRlbnRJRCI6IklUMjQwMSIsImVtYWlsIjoidGh1d2FAZ21haWwuY29tIiwiaWQiOiI2NWZjOGU0MmQ0YzExYjI1ZmI4MTNiYzcifSwiaWF0IjoxNzExMTg0Mjc1LCJleHAiOjE3NDI3NDE4NzV9.kA1gsiDvX2gA_lSkMB5B9nJBWtNR6Q4EDFz87e46VaM",
+								"description": "student",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"courseId\": \"SE3070\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/stuEnroll/enrollments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stuEnroll",
+								"enrollments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "studentCourse",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50Ijp7InN0dWRlbnRJRCI6IklUMjQwMSIsImVtYWlsIjoidGh1d2FAZ21haWwuY29tIiwiaWQiOiI2NWZjOGU0MmQ0YzExYjI1ZmI4MTNiYzcifSwiaWF0IjoxNzExMTg0Mjc1LCJleHAiOjE3NDI3NDE4NzV9.kA1gsiDvX2gA_lSkMB5B9nJBWtNR6Q4EDFz87e46VaM",
+								"description": "student",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/stuEnroll/enrollments/IT2401",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stuEnroll",
+								"enrollments",
+								"IT2401"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "courseStudent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJhZG1pbklEIjoiQUQyMDAxIiwiZW1haWwiOiJjaGFuaWR1QGdtYWlsLmNvbSIsImlkIjoiNjVmOTM3M2YwM2JkYTZkZGMzNmM4NTgzIn0sImlhdCI6MTcxMTE3OTExOSwiZXhwIjoxNzQyNzM2NzE5fQ.tkdsjeLmLnSmirKhk3Jyp7kMjtt4tHohrXwH7tKYVcs",
+								"description": "admin",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8070/api/stuEnroll/enrollments/course/SE3020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"stuEnroll",
+								"enrollments",
+								"course",
+								"SE3020"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification",
+			"item": [
+				{
+					"name": "send",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipient\": \"IT2400\",\r\n    \"message\":\"you can take your ID from the campus tomorrow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8070/api/note/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8070",
+							"path": [
+								"api",
+								"note",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

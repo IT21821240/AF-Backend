@@ -1,0 +1,67 @@
+config:
+  target: "http://localhost:8070" 
+  phases:
+    - duration: 300 
+      arrivalRate: 10 
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+- name: "Timetable Registration"
+  flow:
+      - post:
+          url: "/api/adm/login" 
+          json:
+            email: "john.doe@example.com" 
+            password: "Password123#" 
+          capture:
+            - json: "$.token" 
+              as: "capturedToken"  
+
+      - post:
+          url: "/api/time/timetable"  
+          headers:
+            Authorization: "{{ capturedToken }}" 
+          json:
+            courseId: "CSE101"
+            day: 1  
+            startTime: {"hours": 9, "minutes": 0} 
+            endTime: {"hours": 11, "minutes": 0}  
+            facultyId: "F1001"  
+            location: "RF504"  
+
+      - think: 5 
+
+      - get:
+          url: "/api/time/timetables"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - put:
+          url: "/api/time/65f9cbe5059c941e2d1c5a04"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+          json:
+            courseId: "CSE101"  
+            day: 1 
+            startTime: {"hours": 10, "minutes": 0}  
+            endTime: {"hours": 12, "minutes": 0}  
+            facultyId: "F1001" 
+            location: "RF504"  
+
+      - think: 5
+
+      - get:
+          url: "/api/time/65f9cbe5059c941e2d1c5a04"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - delete:
+          url: "/api/time/65f9cbe5059c941e2d1c5a04"  
+          headers:
+            Authorization: "{{ capturedToken }}"

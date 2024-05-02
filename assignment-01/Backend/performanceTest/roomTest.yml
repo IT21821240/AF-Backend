@@ -1,0 +1,65 @@
+config:
+  target: "http://localhost:8070" 
+  phases:
+    - duration: 300 
+      arrivalRate: 10 
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+- name: "Room Registration"
+  flow:
+      - post:
+          url: "/api/adm/login" 
+          json:
+            email: "john.doe@example.com" 
+            password: "Password123#" 
+          capture:
+            - json: "$.token" 
+              as: "capturedToken"  
+
+      - post:
+          url: "/api/ro/rooms"  
+          headers:
+            Authorization: "{{ capturedToken }}" 
+          json:
+            floorNo: "1"  
+            building: "Main Building"  
+            name: "Room A101"  
+            capacity: 30  
+            resources: ["Projector", "Whiteboard"]
+
+      - think: 5 
+
+      - get:
+          url: "/api/ro/rooms" 
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - put:
+          url: "/api/ro/room/RF504"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+          json:
+            floorNo: "2" 
+            building: "Main Building" 
+            name: "Room A101"  
+            capacity: 35  
+            resources: ["Projector", "Whiteboard", "Speaker System"]  
+
+      - think: 5
+
+      - get:
+          url: "/api/ro/room/RF504"  
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - delete:
+          url: "/api/ro/room/RF504" 
+          headers:
+            Authorization: "{{ capturedToken }}"

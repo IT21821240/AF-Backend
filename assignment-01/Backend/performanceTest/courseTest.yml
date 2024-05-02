@@ -1,0 +1,61 @@
+config:
+  target: "http://localhost:8070" 
+  phases:
+    - duration: 300 
+      arrivalRate: 10 
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+- name: "Course Registration"
+  flow:
+      - post:
+          url: "/api/adm/login" 
+          json:
+            email: "john.doe@example.com" 
+            password: "Password123#" 
+          capture:
+            - json: "$.token" 
+              as: "capturedToken"  
+
+      - post:
+          url: "/api/cou/courses" 
+          headers:
+            Authorization: "{{ capturedToken }}" 
+          json:
+            courseCode: "CSE101"
+            name: "Introduction to Computer Science"
+            description: "This course covers the fundamentals of computer science."
+            credits: 3
+            faculties: ["F1003", "F1002"] 
+
+      - think: 5 
+
+      - get:
+          url: "/api/cou/courses" 
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - put:
+          url: "/api/cou/CSE101" 
+          headers:
+            Authorization: "{{ capturedToken }}"
+          json:
+            name: "Introduction to Computer Science - Updated"
+
+      - think: 5
+
+      - get:
+          url: "/api/cou/CSE101" 
+          headers:
+            Authorization: "{{ capturedToken }}"
+
+      - think: 5
+
+      - delete:
+          url: "/api/cou/CSE101" 
+          headers:
+            Authorization: "{{ capturedToken }}"
